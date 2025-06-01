@@ -1,0 +1,121 @@
+.user-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.name-of-data,
+.phone-of-data,
+.email-of-data {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px 0 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.name-part,
+.phone-part,
+.email-part {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.first-name,
+.last-name,
+.phone-number {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  margin-bottom: 15px;
+}
+
+.address-part {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.street-address,
+.street-address-line,
+.zip-code-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.city-info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.city-info-input,
+.state-info-input {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  margin-bottom: 15px;
+}
+
+.phone-number input::placeholder,
+.email-part input::placeholder {
+  color: #666;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.error-block {
+  margin-top: 5px;
+}
+
+
+@media (max-width: 768px) {
+  .name-part,
+  .phone-part,
+  .email-part,
+  .city-info {
+    flex-direction: column;
+  }
+
+  .first-name,
+  .last-name,
+  .phone-number,
+  .city-info-input,
+  .state-info-input {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .user-form {
+    padding: 10px;
+  }
+
+  .name-of-data,
+  .phone-of-data,
+  .email-of-data {
+    font-size: 14px;
+  }
+
+  .phone-number input::placeholder,
+  .email-part input::placeholder {
+    font-size: 12px;
+  }
+
+  input,
+  button {
+    font-size: 14px;
+  }
+}

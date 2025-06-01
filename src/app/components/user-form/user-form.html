@@ -1,0 +1,180 @@
+<div class="logo"></div>
+<form [formGroup]="form" (submit)="save()" class="user-form">
+    <div class="name-of-data">Full Name <span>*</span></div>
+    <div class="name-part">
+        <div class="first-name">
+            <input 
+            type="text" 
+            name="firstname" 
+            id="firstname" 
+            formControlName="firstname"
+            required
+            >
+
+             <div class="error-block" *ngIf="form.controls['firstname'].invalid && (form.controls['firstname'].dirty || form.controls['firstname'].touched)">
+                <span *ngIf="form.controls['firstname'].hasError('required')"> First name is required!</span>
+                <span *ngIf="form.controls['firstname'].hasError('pattern')">Only Latin letters! (min.3; max.50)</span>
+            </div>
+            <label for="firstname">First Name</label>
+
+       
+
+        </div>
+
+        <div class="last-name">
+             <input 
+            type="text" 
+            name="lastname" 
+            id="lastname" 
+            formControlName="lastname"
+            required
+            >
+
+            <div class="error-block" *ngIf="form.controls['lastname'].invalid && (form.controls['lastname'].dirty || form.controls['lastname'].touched)">
+                <span *ngIf="form.controls['lastname'].hasError('required')"> Last name is required!</span>
+                <span *ngIf="form.controls['lastname'].hasError('pattern')">Only Latin letters! (min.3; max.50)</span>
+            </div>
+
+            <label for="lastname">Last Name</label>
+
+        
+
+        </div>
+    </div>
+
+    <div class="name-of-data">Address <span>*</span></div>
+
+    <div class="address-part">
+        <div class="street-address">
+            <input 
+            type="text" 
+            name="streetAddress"
+            id="streetAddress" 
+            formControlName="streetAddress"
+            required
+            >
+            <div class="error-block" *ngIf="form.controls['streetAddress'].invalid && (form.controls['streetAddress'].dirty || form.controls['streetAddress'].touched)">
+                <span *ngIf="form.controls['streetAddress'].hasError('required')"> Street Address is required!</span>
+                <span *ngIf="form.controls['streetAddress'].hasError('pattern')">Only Latin letters, numbers, comma and point! Min.symbols - 3; max. symbols - 50. </span>
+            </div>
+            <label for="streetAddress">Street Address</label>
+
+            
+        </div>
+    
+        <div class="street-address-line">
+            <input 
+            type="text" 
+            name="streetAddressLine"
+            id="streetAddressLine" 
+            formControlName="streetAddressLine"
+            required
+            >
+            <div class="error-block" *ngIf="form.controls['streetAddressLine'].invalid && (form.controls['streetAddressLine'].dirty || form.controls['streetAddressLine'].touched)">
+                <span *ngIf="form.controls['streetAddressLine'].hasError('required')"> Street Address Line 2 is required!</span>
+                <span *ngIf="form.controls['streetAddressLine'].hasError('pattern')">Only Latin letters, numbers, comma and point! Min.symbols - 3; max. symbols - 50. </span>
+            </div>
+            <label for="streetAddressLine">Street Address Line 2</label>
+
+             
+        </div>
+
+        <div class="city-info">
+            <div class="city-info-input">
+                <input
+                 type="text"
+                 name="city" 
+                 id="city"
+                 formControlName="city"
+                required
+                >
+                 <div class="error-block" *ngIf="form.controls['city'].invalid && (form.controls['city'].dirty || form.controls['city'].touched)">
+                    <span *ngIf="form.controls['city'].hasError('required')"> City is required!</span>
+                    <span *ngIf="form.controls['city'].hasError('pattern')">Only Latin letters! (min.3; max.50). </span>
+                </div>
+
+                <label for="city">City</label>
+            </div>
+
+            <div class="state-info-input">
+                <input
+                 type="text"
+                 name="state" 
+                 id="state"
+                 formControlName="state"
+                required
+                >
+                 <div class="error-block" *ngIf="form.controls['state'].invalid && (form.controls['state'].dirty || form.controls['state'].touched)">
+                    <span *ngIf="form.controls['state'].hasError('required')"> State/Province is required!</span>
+                    <span *ngIf="form.controls['state'].hasError('pattern')">Only Latin letters! (min.3; max.50). </span>
+                </div>
+
+                <label for="state">State / Province</label>
+            </div>
+        </div>
+
+        <div class="zip-code-input">
+            <input 
+                type="text"
+                name="zipCode"
+                id="zipCode"
+                formControlName="zipCode"
+                required
+             >
+              <div class="error-block" *ngIf="form.controls['zipCode'].invalid && (form.controls['zipCode'].dirty || form.controls['zipCode'].touched)">
+                    <span *ngIf="form.controls['zipCode'].hasError('required')"> Postal/Zip Code is required!</span>
+                    <span *ngIf="form.controls['zipCode'].hasError('pattern')">Min.digits - 3; max. digits - 50. </span>
+                </div>
+
+            <label for="zipCode">Postal / Zip Code</label>
+        </div>
+    </div> 
+
+    <div class="phone-of-data">Phone Number <span>*</span></div>
+        <div class="phone-part">
+            <div class="phone-number" >
+            <input
+             type="number" 
+             placeholder="(000) 000-0000"
+             name="phoneNumber"
+             id="phoneNumber" 
+             formControlName="phoneNumber"
+             required
+             >
+             <div class="error-block" *ngIf="form.controls['phoneNumber'].invalid && (form.controls['phoneNumber'].dirty || form.controls['phoneNumber'].touched)">
+                    <span *ngIf="form.controls['phoneNumber'].hasError('required')"> Phone number is required!</span>
+                    <span *ngIf="form.controls['phoneNumber'].hasError('pattern')">Min.digits - 10; max. digits - 20. </span>
+                </div>
+        </div>
+    </div>
+
+    <div class="email-of-data">E-mail</div>
+        <div class="email-part">
+            <div class="phone-number" >
+            <input
+             type="email"
+             placeholder="ex: example&#64;example.com"
+             name="email" 
+             id="email"
+             formControlName="email"
+             required
+             >
+             <div class="error-block" *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)">
+                    <span *ngIf="form.controls['email'].hasError('required')"> E-mail number is required!</span>
+                    <span *ngIf="form.controls['email'].hasError('pattern')">Please, enter a valid e-mail address </span>
+                </div>
+            <label for="email">example&#64;example.com</label>
+        </div>
+    </div>
+            
+       
+    <hr>
+    
+    
+    <button type="submit" [disabled]="!form.valid">Submit</button>
+
+    
+</form>
+
+
+
