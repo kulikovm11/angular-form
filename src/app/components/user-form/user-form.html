@@ -13,7 +13,9 @@
 
              <div class="error-block" *ngIf="form.controls['firstname'].invalid && (form.controls['firstname'].dirty || form.controls['firstname'].touched)">
                 <span *ngIf="form.controls['firstname'].hasError('required')"> First name is required!</span>
-                <span *ngIf="form.controls['firstname'].hasError('pattern')">Only Latin letters! (min.3; max.50)</span>
+                <span *ngIf="form.controls['firstname'].hasError('minlength')"> Min 3 symbols!</span>
+                <span *ngIf="form.controls['firstname'].hasError('maxlength')"> Max 50 symbols!</span>
+                <span *ngIf="form.controls['firstname'].hasError('pattern')">Only Latin letters!</span>
             </div>
             <label for="firstname">First Name</label>
 
@@ -32,7 +34,9 @@
 
             <div class="error-block" *ngIf="form.controls['lastname'].invalid && (form.controls['lastname'].dirty || form.controls['lastname'].touched)">
                 <span *ngIf="form.controls['lastname'].hasError('required')"> Last name is required!</span>
-                <span *ngIf="form.controls['lastname'].hasError('pattern')">Only Latin letters! (min.3; max.50)</span>
+                <span *ngIf="form.controls['lastname'].hasError('minlength')"> Min 3 symbols!</span>
+                <span *ngIf="form.controls['lastname'].hasError('maxlength')"> Max 50 symbols!</span>
+                <span *ngIf="form.controls['lastname'].hasError('pattern')">Only Latin letters!</span>
             </div>
 
             <label for="lastname">Last Name</label>
@@ -55,7 +59,9 @@
             >
             <div class="error-block" *ngIf="form.controls['streetAddress'].invalid && (form.controls['streetAddress'].dirty || form.controls['streetAddress'].touched)">
                 <span *ngIf="form.controls['streetAddress'].hasError('required')"> Street Address is required!</span>
-                <span *ngIf="form.controls['streetAddress'].hasError('pattern')">Only Latin letters, numbers, comma and point! Min.symbols - 3; max. symbols - 50. </span>
+                <span *ngIf="form.controls['streetAddress'].hasError('minlength')"> Min 3 symbols!</span>
+                <span *ngIf="form.controls['streetAddress'].hasError('maxlength')"> Max 50 symbols!</span>
+                <span *ngIf="form.controls['streetAddress'].hasError('pattern')">Only Latin letters, numbers, comma and point! </span>
             </div>
             <label for="streetAddress">Street Address</label>
 
@@ -72,7 +78,9 @@
             >
             <div class="error-block" *ngIf="form.controls['streetAddressLine'].invalid && (form.controls['streetAddressLine'].dirty || form.controls['streetAddressLine'].touched)">
                 <span *ngIf="form.controls['streetAddressLine'].hasError('required')"> Street Address Line 2 is required!</span>
-                <span *ngIf="form.controls['streetAddressLine'].hasError('pattern')">Only Latin letters, numbers, comma and point! Min.symbols - 3; max. symbols - 50. </span>
+                <span *ngIf="form.controls['streetAddressLine'].hasError('minlength')"> Min 3 symbols!</span>
+                <span *ngIf="form.controls['streetAddressLine'].hasError('maxlength')"> Max 50 symbols!</span>
+                <span *ngIf="form.controls['streetAddressLine'].hasError('pattern')">Only Latin letters, numbers, comma and point! </span>
             </div>
             <label for="streetAddressLine">Street Address Line 2</label>
 
@@ -90,7 +98,9 @@
                 >
                  <div class="error-block" *ngIf="form.controls['city'].invalid && (form.controls['city'].dirty || form.controls['city'].touched)">
                     <span *ngIf="form.controls['city'].hasError('required')"> City is required!</span>
-                    <span *ngIf="form.controls['city'].hasError('pattern')">Only Latin letters! (min.3; max.50). </span>
+                     <span *ngIf="form.controls['city'].hasError('minlength')"> Min 3 symbols!</span>
+                    <span *ngIf="form.controls['city'].hasError('maxlength')"> Max 50 symbols!</span>
+                    <span *ngIf="form.controls['city'].hasError('pattern')">Only Latin letters! </span>
                 </div>
 
                 <label for="city">City</label>
@@ -106,7 +116,9 @@
                 >
                  <div class="error-block" *ngIf="form.controls['state'].invalid && (form.controls['state'].dirty || form.controls['state'].touched)">
                     <span *ngIf="form.controls['state'].hasError('required')"> State/Province is required!</span>
-                    <span *ngIf="form.controls['state'].hasError('pattern')">Only Latin letters! (min.3; max.50). </span>
+                     <span *ngIf="form.controls['state'].hasError('minlength')"> Min 3 symbols!</span>
+                    <span *ngIf="form.controls['state'].hasError('maxlength')"> Max 50 symbols!</span>
+                    <span *ngIf="form.controls['state'].hasError('pattern')">Only Latin letters!  </span>
                 </div>
 
                 <label for="state">State / Province</label>
@@ -123,7 +135,8 @@
              >
               <div class="error-block" *ngIf="form.controls['zipCode'].invalid && (form.controls['zipCode'].dirty || form.controls['zipCode'].touched)">
                     <span *ngIf="form.controls['zipCode'].hasError('required')"> Postal/Zip Code is required!</span>
-                    <span *ngIf="form.controls['zipCode'].hasError('pattern')">Min.digits - 3; max. digits - 50. </span>
+                      <span *ngIf="form.controls['zipCode'].hasError('minlength')"> Min 3 symbols!</span>
+                    <span *ngIf="form.controls['zipCode'].hasError('maxlength')"> Max 10 symbols!</span>
                 </div>
 
             <label for="zipCode">Postal / Zip Code</label>
@@ -143,7 +156,9 @@
              >
              <div class="error-block" *ngIf="form.controls['phoneNumber'].invalid && (form.controls['phoneNumber'].dirty || form.controls['phoneNumber'].touched)">
                     <span *ngIf="form.controls['phoneNumber'].hasError('required')"> Phone number is required!</span>
-                    <span *ngIf="form.controls['phoneNumber'].hasError('pattern')">Min.digits - 10; max. digits - 20. </span>
+                    <span *ngIf="form.controls['phoneNumber'].hasError('minlength')"> Min 3 symbols!</span>
+                    <span *ngIf="form.controls['phoneNumber'].hasError('maxlength')"> Max 20 symbols!</span>
+                   
                 </div>
         </div>
     </div>
